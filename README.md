@@ -9,6 +9,12 @@ Surround selections for [Kakoune].
 
 [Kakoune]: https://kakoune.org
 
+## Dependencies
+
+- [lib.kak]
+
+[lib.kak]: https://github.com/alexherbo2/lib.kak
+
 ## Installation
 
 ``` sh
