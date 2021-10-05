@@ -78,8 +78,8 @@ define-command -override -hidden surround-tag -docstring 'surround tag' %{
 
 # Surround selected text
 define-command -override -hidden surround-add -params 2 %{
-  execute-keys-with-register P %arg{1}
-  execute-keys-with-register p %arg{2}
+  evaluate-commands -draft %[ insert-text %arg{1} ]
+  evaluate-commands -draft %[ append-text %arg{2} ]
 }
 
 define-command -override -hidden surround-add-space %{
