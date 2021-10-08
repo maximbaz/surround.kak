@@ -1,14 +1,17 @@
 # Surround selections
+# Public commands: ["surround"]
 # Reference: https://github.com/mawww/kakoune/blob/master/src/normal.cc#:~:text=select_object
 
-# Surround mode
-try %{ declare-user-mode surround }
+# Modes ────────────────────────────────────────────────────────────────────────
+
+try %[ declare-user-mode surround ]
 
 define-command -override surround -docstring 'surround' %{
   enter-user-mode surround
 }
 
-# Initialization
+# Mappings ─────────────────────────────────────────────────────────────────────
+
 define-command -override -hidden surround-init %{
   # Enter text
   map -docstring 'enter insert mode' global surround i ':surround-enter-insert-mode<ret>'
@@ -118,5 +121,6 @@ define-command -override -hidden surround-delete %{
   }
 }
 
-# Initialization
+# Initialization ───────────────────────────────────────────────────────────────
+
 surround-init
