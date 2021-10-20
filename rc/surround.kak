@@ -14,15 +14,15 @@ define-command -override surround -docstring 'surround' %{
 
 define-command -override -hidden surround-init %{
   # Enter text
-  map -docstring 'enter insert mode' global surround i ':surround-enter-insert-mode<ret>'
-  map -docstring 'key' global surround k ':surround-key<ret>'
-  map -docstring 'tag' global surround t ':surround-tag<ret>'
+  map -docstring 'enter insert mode' global surround i ': surround-enter-insert-mode<ret>'
+  map -docstring 'key' global surround k ': surround-key<ret>'
+  map -docstring 'tag' global surround t ': surround-tag<ret>'
 
   # Editing
-  map -docstring 'space' global surround <space> ':surround-add-space<ret>'
-  map -docstring 'line' global surround <ret> ':surround-add-line<ret>'
-  map -docstring 'delete' global surround <backspace> ':surround-delete<ret>'
-  map -docstring 'delete' global surround <del> ':surround-delete<ret>'
+  map -docstring 'space' global surround <space> ': surround-add-space<ret>'
+  map -docstring 'line' global surround <ret> ': surround-add-line<ret>'
+  map -docstring 'delete' global surround <backspace> ': surround-delete<ret>'
+  map -docstring 'delete' global surround <del> ': surround-delete<ret>'
 
   # Surrounding pairs
   declare-surrounding-pair 'parenthesis block' b ( )
@@ -38,17 +38,17 @@ define-command -override -hidden surround-init %{
   declare-surrounding-pair 'single angle quotation mark' <a-g> ‹ ›
 
   # Emphasis
-  map -docstring 'emphasis' global surround _ ':surround-add _ _<ret>'
-  map -docstring 'strong' global surround * ':surround-add ** **<ret>'
+  map -docstring 'emphasis' global surround _ ': surround-add _ _<ret>'
+  map -docstring 'strong' global surround * ': surround-add ** **<ret>'
 }
 
 # Commands ─────────────────────────────────────────────────────────────────────
 
 # Declare surrounding pairs
 define-command -override declare-surrounding-pair -params 4 -docstring 'declare-surrounding-pair <description> [alias] <opening> <closing>: declare surrounding pair' %{
-  try %{ map -docstring %arg{1} global surround %arg{2} ":surround-add %%🐈%arg{3}🐈 %%🐈%arg{4}🐈<ret>" }
-  try %{ map -docstring %arg{1} global surround %arg{3} ":surround-add %%🐈%arg{3}🐈 %%🐈%arg{4}🐈<ret>" }
-  try %{ map -docstring %arg{1} global surround %arg{4} ":surround-add %%🐈%arg{3}🐈 %%🐈%arg{4}🐈<ret>" }
+  try %{ map -docstring %arg{1} global surround %arg{2} ": surround-add %%🐈%arg{3}🐈 %%🐈%arg{4}🐈<ret>" }
+  try %{ map -docstring %arg{1} global surround %arg{3} ": surround-add %%🐈%arg{3}🐈 %%🐈%arg{4}🐈<ret>" }
+  try %{ map -docstring %arg{1} global surround %arg{4} ": surround-add %%🐈%arg{3}🐈 %%🐈%arg{4}🐈<ret>" }
 }
 
 # Enter insert mode
