@@ -45,9 +45,9 @@ define-command -override -hidden surround-init %{
 
 # Declare surrounding pairs
 define-command -override declare-surrounding-pair -params 4 -docstring 'declare-surrounding-pair <description> [alias] <opening> <closing>: declare surrounding pair' %{
-  try %{ map -docstring %arg{1} global surround %arg{2} ": surround-add %%🐈%arg{3}🐈 %%🐈%arg{4}🐈<ret>" }
-  try %{ map -docstring %arg{1} global surround %arg{3} ": surround-add %%🐈%arg{3}🐈 %%🐈%arg{4}🐈<ret>" }
-  try %{ map -docstring %arg{1} global surround %arg{4} ": surround-add %%🐈%arg{3}🐈 %%🐈%arg{4}🐈<ret>" }
+  try %[ map -docstring %arg{1} global surround %arg{2} ": surround-add %%🐈%arg{3}🐈 %%🐈%arg{4}🐈<ret>" ]
+  try %[ map -docstring %arg{1} global surround %arg{3} ": surround-add %%🐈%arg{3}🐈 %%🐈%arg{4}🐈<ret>" ]
+  try %[ map -docstring %arg{1} global surround %arg{4} ": surround-add %%🐈%arg{3}🐈 %%🐈%arg{4}🐈<ret>" ]
 }
 
 # Enter insert mode
@@ -90,8 +90,8 @@ define-command -override -hidden surround-add-space %{
 
 define-command -override -hidden surround-add-line %{
   # Extract selected text on its own line; clean whitespaces around the selection.
-  try %{ execute-keys -draft 'i<ret><esc>kgl<a-i><space>d' }
-  try %{ execute-keys -draft 'a<ret><esc>jgl<a-i><space>d' }
+  try %[ execute-keys -draft 'i<ret><esc>kgl<a-i><space>d' ]
+  try %[ execute-keys -draft 'a<ret><esc>jgl<a-i><space>d' ]
 
   # Indent selection
   execute-keys -draft '<a-:><a-;>K<a-:>J<a-&>'
