@@ -4,12 +4,12 @@ Surround selections.
 
 == Usage
 
-Enter `surround` to surround selections.
+Enter `surround-mode` to surround selections.
 
 == Configuration
 
 --------------------------------------------------------------------------------
-map -docstring 'surround' global normal q ':surround<ret>'
+map -docstring 'surround mode' global normal q ': surround-mode<ret>'
 --------------------------------------------------------------------------------
 
 == Surrounding pairs
@@ -52,19 +52,3 @@ _Alt+g_, _‹_, _›_::
 
 _*_::
     strong
-
-Enter insert mode with `i` or wait for next key with `k`.
-
-== Adding surrounding pairs
-
---------------------------------------------------------------------------------
-map -docstring 'parenthesis block' global surround b ':surround-add ( )<ret>'
---------------------------------------------------------------------------------
-
---------------------------------------------------------------------------------
-declare-surrounding-pair 'parenthesis block' b ( )
---------------------------------------------------------------------------------
-
-== Commands
-
-- `surround`

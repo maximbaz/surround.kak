@@ -1,12 +1,11 @@
 # Surround selections
-# Public commands: ["surround"]
 # Reference: https://github.com/mawww/kakoune/blob/master/src/normal.cc#:~:text=select_object
 
 # Modes ────────────────────────────────────────────────────────────────────────
 
 try %[ declare-user-mode surround ]
 
-define-command -override surround -docstring 'surround' %{
+define-command -override surround-mode -docstring 'surround mode' %{
   enter-user-mode surround
 }
 
