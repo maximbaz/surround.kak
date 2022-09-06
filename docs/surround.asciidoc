@@ -4,12 +4,12 @@ Surround selections.
 
 == Usage
 
-Enter `surround-mode` to surround selections.
+Type `:enter-surround-mode` to surround selections.
 
 == Configuration
 
 --------------------------------------------------------------------------------
-map -docstring 'surround mode' global normal q ': surround-mode<ret>'
+map -docstring 'enter surround mode' global normal q ': enter-surround-mode<ret>'
 --------------------------------------------------------------------------------
 
 == Surrounding pairs

@@ -5,7 +5,7 @@
 
 try %[ declare-user-mode surround ]
 
-define-command -override surround-mode -docstring 'surround mode' %{
+define-command -override enter-surround-mode -docstring 'enter surround mode' %{
   enter-user-mode surround
 }
 
